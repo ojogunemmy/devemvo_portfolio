@@ -941,7 +941,7 @@ footer {
 }
 
 .contact-link {
-    color: #667eea;
+    /* color: #667eea; */
     text-decoration: none;
     font-size: 1em;
     font-weight: 500;
@@ -950,7 +950,7 @@ footer {
 }
 
 .contact-link:hover {
-    color: #764ba2;
+    /* color: #764ba2; */
     text-decoration: underline;
 }
 
