@@ -83,7 +83,8 @@ header::after {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #fbbf24 0%, #fb923c 50%, #f472b6 100%);
+    background-color: #fbbf24;
+    /* background: linear-gradient(90deg, #fbbf24 0%, #fb923c 50%, #f472b6 100%); */
 }
 
 @keyframes rotate {
