@@ -135,12 +135,40 @@ cards.forEach(card => {
     observer.observe(card);
 });
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.querySelector('.theme-icon');
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to 'light'
+const currentTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', currentTheme);
+
+// Update icon based on current theme
+if (currentTheme === 'dark') {
+    themeIcon.textContent = '☀️';
+} else {
+    themeIcon.textContent = '🌙';
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const theme = htmlElement.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        //  icon
+        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Move the Xpromo project item to the top of the Project Showcase
     try {
         const firstProjectItem = document.querySelector('.project-item');
         if (firstProjectItem) {
-            const projectCard = firstProjectItem.parentElement; // container that holds .project-item children
+            const projectCard = firstProjectItem.parentElement; 
             const xpromo = Array.from(projectCard.querySelectorAll('.project-item'))
                 .find(item => {
                     const nameEl = item.querySelector('.project-name');
@@ -151,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     } catch (e) {
-        // no-op
+        console.error('Error reordering project items:', e);
     }
 
     // initialize slider state after DOM order is correct
