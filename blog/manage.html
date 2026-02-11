@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Manage | Dev Emco</title>
+    <meta name="description" content="Manage local blog interactions (likes, bookmarks, comments, shares)." />
+    <meta name="author" content="Dev Emco" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./blog.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html#home">👨‍💻 Dev Emco</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="./" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="./manage.html" class="nav-link">Manage</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="card blog-admin" aria-label="Blog interaction manager">
+            <div class="blog-article-top">
+                <a class="blog-back" href="./">← Back to blog</a>
+            </div>
+
+            <header class="blog-admin-header">
+                <h1 class="blog-post-title">Manage interactions</h1>
+                <p class="blog-muted">This page manages interactions stored locally in this browser (no backend yet).</p>
+                <div id="adminSummary" class="blog-admin-summary" aria-label="Summary"></div>
+            </header>
+
+            <section class="blog-admin-actions" aria-label="Manager actions">
+                <button id="exportBtn" class="blog-btn" type="button">Export JSON</button>
+                <button id="importToggleBtn" class="blog-btn" type="button">Import JSON</button>
+                <button id="clearAllBtn" class="blog-btn blog-btn-danger" type="button">Reset all</button>
+            </section>
+
+            <div id="importPanel" class="blog-admin-import" hidden>
+                <label class="blog-label" for="importArea">Paste exported JSON</label>
+                <textarea id="importArea" class="blog-textarea" placeholder="{ ... }"></textarea>
+                <div class="blog-admin-import-actions">
+                    <button id="importMergeBtn" class="blog-btn" type="button">Import (merge)</button>
+                    <button id="importReplaceBtn" class="blog-btn" type="button">Import (replace)</button>
+                    <button id="importCancelBtn" class="blog-btn" type="button">Cancel</button>
+                </div>
+                <div class="blog-muted">Merge keeps existing data and adds new items. Replace clears current data first.</div>
+            </div>
+
+            <div id="adminError" class="blog-error" role="alert" aria-live="polite"></div>
+
+            <section class="blog-admin-grid" aria-label="Interaction management">
+                <div class="blog-admin-left">
+                    <div class="blog-admin-panel-head">
+                        <h2 class="blog-h2">Posts</h2>
+                        <div class="blog-muted">Click a post to manage its interactions.</div>
+                    </div>
+                    <div id="adminPostList" class="blog-admin-post-list" aria-label="Post list"></div>
+                </div>
+
+                <div class="blog-admin-right">
+                    <div class="blog-admin-panel-head">
+                        <h2 class="blog-h2">Details</h2>
+                        <div class="blog-muted">Likes/bookmarks are per-browser toggles.</div>
+                    </div>
+                    <div id="adminDetails" class="blog-admin-details" aria-label="Post details">
+                        <p class="blog-muted">Select a post to view comments, likes, bookmarks, and shares.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Emco | Software Engineer | Full Stack Developer | Web • Mobile • Desktop • IoT</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Delivering production-ready solutions with clean code ☕💻✨</p>
+    </footer>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <script src="../script.js" defer></script>
+    <script src="./posts.js" defer></script>
+    <script src="./manage.js" defer></script>
+</body>
+</html>
