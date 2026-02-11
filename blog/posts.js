@@ -7,6 +7,23 @@
 */
 
 (function () {
+    const CUSTOM_POSTS_KEY = "devemco:blog:customPosts";
+
+    function loadCustomPosts() {
+        try {
+            const raw = localStorage.getItem(CUSTOM_POSTS_KEY);
+            if (!raw) return [];
+            const parsed = JSON.parse(raw);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function isValidPostShape(post) {
+        return post && typeof post === "object" && typeof post.slug === "string" && post.slug.trim().length;
+    }
+
     const posts = [
         {
             id: "post_001",
@@ -310,6 +327,17 @@
             ]
         }
     ];
+
+    // Merge locally-created posts (from the Manage page) into the runtime list.
+    // These are stored per-browser (no backend).
+    const baseSlugs = new Set(posts.map(p => p.slug));
+    for (const custom of loadCustomPosts()) {
+        if (!isValidPostShape(custom)) continue;
+        const slug = String(custom.slug).trim();
+        if (!slug || baseSlugs.has(slug)) continue;
+        baseSlugs.add(slug);
+        posts.push({ ...custom, __custom: true });
+    }
 
     window.BLOG_POSTS = posts;
 })();
