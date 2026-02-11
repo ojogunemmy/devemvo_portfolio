@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog | Dev Emco</title>
+    <meta name="description" content="A category-based content blog: practical frameworks, lessons learned, deep dives, and real-world notes across tech, product, and beyond." />
+    <meta name="author" content="Dev Emco" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog | Dev Emco" />
+    <meta property="og:description" content="A category-based content blog: practical frameworks, lessons learned, deep dives, and real-world notes across tech, product, and beyond." />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./blog.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html#home">👨‍💻 Dev Emco</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="./" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="./manage.html" class="nav-link">Manage</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="top" class="blog-hero blog-hero--index">
+        <div class="container blog-mast">
+            <div class="blog-mast-grid">
+                <div class="blog-mast-left">
+                    <div class="blog-mast-kicker">Content Blog</div>
+                    <h1 class="blog-mast-title">Notes, Ideas &amp; Frameworks</h1>
+                    <p class="blog-mast-lede">
+                        A category-first library of deep dives, lessons learned, and reusable checklists — spanning engineering, product thinking, career, systems, and whatever I’m exploring.
+                    </p>
+
+                    <div class="blog-mast-pills" aria-label="Blog focus">
+                        <span class="blog-mast-pill">Category-first</span>
+                        <span class="blog-mast-pill">Why &gt; What</span>
+                        <span class="blog-mast-pill">Examples</span>
+                        <span class="blog-mast-pill">Checklists</span>
+                    </div>
+                </div>
+
+                <div class="blog-mast-right" aria-label="Reading guide">
+                    <div id="featuredCard" class="blog-featured-card" aria-label="Featured recent post">
+                        <div class="blog-featured-top">
+                            <div class="blog-featured-kicker">Recent post</div>
+                            <div id="featuredCategory" class="blog-featured-category">—</div>
+                        </div>
+
+                        <a id="featuredLink" class="blog-featured-title" href="./post.html">Loading…</a>
+                        <p id="featuredSummary" class="blog-featured-summary"></p>
+
+                        <div id="featuredMeta" class="blog-featured-meta" aria-label="Featured meta"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card blog-shell" aria-label="Blog">
+            <div class="blog-toolbar">
+                <div class="blog-toolbar-left">
+                    <h2 class="blog-h2">Browse by category</h2>
+                    <p class="blog-muted">Pick a category to filter posts. Counts, likes, and comments are saved locally in your browser.</p>
+                </div>
+                <div class="blog-toolbar-right" aria-label="Sort">
+                    <label class="blog-label" for="sortSelect">Sort</label>
+                    <select id="sortSelect" class="blog-select">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="category">Category</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="categoryRow" class="blog-category-row" aria-label="Categories"></div>
+
+            <div class="blog-grid">
+                <section class="blog-list" aria-label="Posts">
+                    <div id="postList" class="blog-post-list"></div>
+                </section>
+
+                <aside class="blog-side" aria-label="About">
+                    <div class="blog-side-card">
+                        <h3 class="blog-h3">What you’ll find here</h3>
+                        <ul class="blog-ul">
+                            <li>Problem-driven intros, then the technical “why”.</li>
+                            <li>Real-world examples, edge cases, and common mistakes.</li>
+                            <li>Actionable checklists you can reuse on projects.</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-side-card">
+                        <h3 class="blog-h3">Start here</h3>
+                        <p class="blog-muted">If you’re building a portfolio blog without a CMS, the first post covers a production-minded structure and the trade-offs that matter.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Emco | Software Engineer | Full Stack Developer | Web • Mobile • Desktop • IoT</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Delivering production-ready solutions with clean code ☕💻✨</p>
+    </footer>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <script src="../script.js" defer></script>
+    <script src="./posts.js" defer></script>
+    <script src="./blog.js" defer></script>
+</body>
+</html>
