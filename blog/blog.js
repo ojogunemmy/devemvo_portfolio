@@ -315,6 +315,27 @@
     function renderBlocks(container, blocks) {
         container.innerHTML = "";
 
+        function normalizeSourceHref(raw) {
+            const href = String(raw || "").trim();
+            if (!href) return null;
+
+            // Allow relative links (internal sources) and http/https.
+            const lower = href.toLowerCase();
+            if (lower.startsWith("javascript:") || lower.startsWith("data:")) return null;
+
+            if (href.startsWith("/") || href.startsWith("./") || href.startsWith("../") || href.startsWith("#")) {
+                return { href, external: false, labelSuffix: "" };
+            }
+
+            try {
+                const url = new URL(href);
+                if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+                return { href: url.toString(), external: true, labelSuffix: url.hostname ? ` (${url.hostname})` : "" };
+            } catch {
+                return null;
+            }
+        }
+
         for (const block of blocks || []) {
             if (block.type === "p") {
                 const p = document.createElement("p");
@@ -386,6 +407,7 @@
                 const captionText = String(block.caption || "").trim();
                 const sourceLabel = String(block.source?.label || "").trim();
                 const sourceUrl = String(block.source?.url || "").trim();
+                const normalized = normalizeSourceHref(sourceUrl);
 
                 if (captionText || sourceLabel) {
                     const figcaption = document.createElement("figcaption");
@@ -399,27 +421,60 @@
                     }
 
                     if (sourceLabel) {
-                        const srcWrap = document.createElement("span");
-                        srcWrap.className = "blog-source";
-
                         const prefix = document.createElement("span");
                         prefix.textContent = captionText ? " — Source: " : "Source: ";
-                        srcWrap.appendChild(prefix);
+                        figcaption.appendChild(prefix);
 
-                        if (sourceUrl) {
+                        const cite = document.createElement("cite");
+                        cite.className = "blog-source";
+
+                        if (normalized) {
                             const a = document.createElement("a");
-                            a.href = sourceUrl;
-                            a.target = "_blank";
-                            a.rel = "noopener noreferrer";
+                            a.href = normalized.href;
+                            if (normalized.external) {
+                                a.target = "_blank";
+                                a.rel = "noopener noreferrer";
+                            }
                             a.textContent = sourceLabel;
-                            srcWrap.appendChild(a);
+                            a.title = normalized.href;
+                            a.setAttribute("aria-label", `Source: ${sourceLabel}`);
+                            cite.appendChild(a);
+
+                            // Helpful context for readers without cluttering the label.
+                            if (normalized.external && normalized.labelSuffix) {
+                                const suffix = document.createElement("span");
+                                suffix.textContent = normalized.labelSuffix;
+                                cite.appendChild(suffix);
+                            }
                         } else {
-                            const t = document.createElement("span");
-                            t.textContent = sourceLabel;
-                            srcWrap.appendChild(t);
+                            // No (safe) URL: render as plain text.
+                            cite.textContent = sourceLabel;
                         }
 
-                        figcaption.appendChild(srcWrap);
+                        figcaption.appendChild(cite);
+                    }
+
+                    // If the author provided a source URL but forgot the label, show a usable reference.
+                    if (!sourceLabel && normalized) {
+                        const prefix = document.createElement("span");
+                        prefix.textContent = captionText ? " — Source: " : "Source: ";
+                        figcaption.appendChild(prefix);
+
+                        const cite = document.createElement("cite");
+                        cite.className = "blog-source";
+
+                        const a = document.createElement("a");
+                        a.href = normalized.href;
+                        if (normalized.external) {
+                            a.target = "_blank";
+                            a.rel = "noopener noreferrer";
+                        }
+                        const label = normalized.external && normalized.labelSuffix ? normalized.labelSuffix.trim() : normalized.href;
+                        a.textContent = label.startsWith("(") ? label.slice(1, -1) : label;
+                        a.title = normalized.href;
+                        a.setAttribute("aria-label", `Source: ${normalized.href}`);
+                        cite.appendChild(a);
+                        figcaption.appendChild(cite);
                     }
 
                     figure.appendChild(figcaption);
@@ -745,5 +800,14 @@
         renderIndexPage();
         // post page
         renderPostPage();
+    });
+
+    // Expose a tiny, stable surface for the management page (preview rendering).
+    // Keep this minimal to avoid coupling UI pages too tightly.
+    window.BLOG_UTILS = Object.freeze({
+        renderBlocks,
+        estimateReadingMinutes,
+        formatDate,
+        escapeHtml
     });
 })();
