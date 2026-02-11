@@ -57,10 +57,9 @@ body {
 
 header {
     text-align: center;
-    padding: clamp(60px, 15vw, 120px) 20px;
+    padding: 20px 20px;
     color: white;
     position: relative;
-    background: var(--gradient-primary);
     /* box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3); */
     overflow: hidden;
 }
@@ -71,9 +70,7 @@ header::before {
     top: -50%;
     left: -50%;
     width: 200%;
-    height: 200%;
-    background-image: url('public/cubes.png');
-    /* animation: rotate 20s linear infinite; */
+    height: fit-content;
 }
 
 header::after {
@@ -132,6 +129,236 @@ h1 {
 .coffee-emoji {
     display: inline-block;
     animation: rotate 2s infinite;
+}
+
+/* =========================
+   Home Hero (Redesigned)
+   ========================= */
+
+.hero-home {
+    text-align: left;
+    padding: clamp(70px, 14vw, 120px) 20px;
+    background: var(--gradient-primary);
+}
+
+.hero-home::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('public/cubes.png');
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(18px, 4vw, 50px);
+    align-items: center;
+}
+
+.hero-identity {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.hero-avatar {
+    width: clamp(90px, 12vw, 120px);
+    height: clamp(90px, 12vw, 120px);
+    margin-bottom: 0;
+}
+
+.hero-name {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-size: 1.15em;
+    color: #ffffff;
+}
+
+.hero-role {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 700;
+}
+
+.hero-status {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 0.95em;
+    width: fit-content;
+}
+
+.hero-status::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    opacity: 0.9;
+}
+
+.hero-headline {
+    margin: 0 0 14px 0;
+    color: #ffffff;
+    font-size: clamp(2.0em, 5vw, 3.2em);
+    line-height: 1.12;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-highlight {
+    color: #fbbf24;
+}
+
+.hero-subtitle {
+    color: rgba(224, 231, 255, 0.95);
+    font-size: clamp(1.0em, 2.4vw, 1.15em);
+    max-width: 58ch;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.hero-primary {
+    margin-top: 0;
+}
+
+.hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero-chips {
+    margin-top: 18px;
+}
+
+.hero-home .badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.hero-home .badge:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.hero-panel {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+    padding: clamp(16px, 3vw, 22px);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+.hero-panel-title {
+    color: #ffffff;
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+    font-size: 1.25em;
+}
+
+.hero-panel-subtitle {
+    color: rgba(224, 231, 255, 0.92);
+    margin-bottom: 14px;
+}
+
+.hero-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.hero-panel-item {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 12px 14px;
+}
+
+.hero-panel-k {
+    color: #fbbf24;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.hero-panel-v {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.avatar {
+    width: clamp(120px, 20vw, 180px);
+    height: clamp(120px, 20vw, 180px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(251, 191, 36, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInDown 1s ease 0.2s both;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 12px 48px rgba(0, 0, 0, 0.4),
+        0 0 0 2px rgba(251, 191, 36, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes rotate {
@@ -507,6 +734,7 @@ h2 {
 
 .highlight {
     background: var(--gradient-primary);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;

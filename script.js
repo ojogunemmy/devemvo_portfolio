@@ -62,15 +62,15 @@ function showContactMessage(event) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        if (href !== '#contact') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        }
+        if (!href || href === '#contact') return;
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+        target.scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
@@ -87,18 +87,26 @@ if (hamburger) {
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            // Allow smooth scroll to work, then close menu
+            const href = link.getAttribute('href') || '';
+
+            // For real navigation (e.g., blog/ or index.html#skills), do not hijack.
+            if (!href.startsWith('#')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                return;
+            }
+
+            // Hash navigation within the same page.
             if (href !== '#contact') {
+                const target = document.querySelector(href);
+                if (!target) return;
+
                 e.preventDefault();
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
             } else {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
