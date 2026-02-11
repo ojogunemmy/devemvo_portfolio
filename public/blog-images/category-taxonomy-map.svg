@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Category taxonomy map">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="0.5" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="25%" cy="25%" r="60%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <g opacity="0.18">
+    <path d="M 0 700 C 300 540, 520 820, 820 650 C 1100 500, 1320 820, 1600 640 L 1600 900 L 0 900 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- connectors -->
+  <g stroke="rgba(255,255,255,0.55)" stroke-width="6" fill="none">
+    <path d="M 430 250 C 600 250, 640 250, 780 250"/>
+    <path d="M 430 250 C 610 330, 650 350, 780 420"/>
+    <path d="M 430 250 C 600 470, 650 520, 780 600"/>
+    <path d="M 430 250 C 600 610, 660 690, 780 760"/>
+  </g>
+
+  <!-- nodes -->
+  <g filter="url(#soft)" opacity="0.22">
+    <rect x="320" y="170" width="260" height="160" rx="28" fill="#000000"/>
+    <rect x="760" y="170" width="520" height="140" rx="28" fill="#000000"/>
+    <rect x="760" y="345" width="520" height="140" rx="28" fill="#000000"/>
+    <rect x="760" y="520" width="520" height="140" rx="28" fill="#000000"/>
+    <rect x="760" y="695" width="520" height="140" rx="28" fill="#000000"/>
+  </g>
+
+  <g>
+    <rect x="320" y="170" width="260" height="160" rx="28" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+    <rect x="760" y="170" width="520" height="140" rx="28" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <rect x="760" y="345" width="520" height="140" rx="28" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <rect x="760" y="520" width="520" height="140" rx="28" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <rect x="760" y="695" width="520" height="140" rx="28" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+
+    <g fill="#ffffff" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-weight="900">
+      <text x="365" y="240" font-size="34" opacity="0.95">Categories</text>
+      <text x="365" y="285" font-size="22" opacity="0.9">(few + stable)</text>
+
+      <text x="810" y="235" font-size="30" opacity="0.95">Architecture</text>
+      <text x="810" y="280" font-size="20" opacity="0.9">Blueprints, patterns, tradeoffs</text>
+
+      <text x="810" y="410" font-size="30" opacity="0.95">Delivery</text>
+      <text x="810" y="455" font-size="20" opacity="0.9">Shipping, process, quality</text>
+
+      <text x="810" y="585" font-size="30" opacity="0.95">IoT &amp; Real-Time</text>
+      <text x="810" y="630" font-size="20" opacity="0.9">Telemetry, reliability, streams</text>
+
+      <text x="810" y="760" font-size="30" opacity="0.95">Career</text>
+      <text x="810" y="805" font-size="20" opacity="0.9">Growth, writing, thinking</text>
+    </g>
+  </g>
+</svg>

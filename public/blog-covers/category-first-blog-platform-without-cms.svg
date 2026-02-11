@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Cover: Category-first blog blueprint">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="0.38" stop-color="#8b5cf6"/>
+      <stop offset="0.7" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.0"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.16"/>
+    </linearGradient>
+    <radialGradient id="b1" cx="35%" cy="28%" r="55%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b2" cx="78%" cy="20%" r="52%">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b3" cx="88%" cy="84%" r="60%">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#a)"/>
+
+  <rect width="1600" height="900" fill="url(#b1)"/>
+  <rect width="1600" height="900" fill="url(#b2)"/>
+  <rect width="1600" height="900" fill="url(#b3)"/>
+
+  <g opacity="0.18">
+    <circle cx="260" cy="250" r="220" fill="#ffffff"/>
+    <circle cx="1320" cy="120" r="180" fill="#ffffff"/>
+    <circle cx="1420" cy="760" r="260" fill="#ffffff"/>
+  </g>
+
+  
+</svg>

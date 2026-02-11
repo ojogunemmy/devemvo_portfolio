@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Cover: Real-time IoT edge cases">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#667eea"/>
+      <stop offset="1" stop-color="#764ba2"/>
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.0"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0.42"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#a)"/>
+
+  <g opacity="0.18" fill="#ffffff">
+    <path d="M120 620 C260 540, 420 700, 560 610 C720 510, 840 710, 1000 600 C1140 500, 1320 720, 1480 610" stroke="#ffffff" stroke-width="10" fill="none"/>
+    <circle cx="330" cy="590" r="10"/>
+    <circle cx="720" cy="560" r="10"/>
+    <circle cx="1140" cy="570" r="10"/>
+  </g>
+
+  
+</svg>
