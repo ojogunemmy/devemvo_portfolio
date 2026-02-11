@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Post | Dev Emco</title>
+    <meta name="description" content="Engineering blog post." />
+    <meta name="author" content="Dev Emco" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Post | Dev Emco" />
+    <meta property="og:description" content="Engineering blog post." />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./blog.css" />
+
+    <script id="ldJson" type="application/ld+json">{}</script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="../index.html#home">👨‍💻 Dev Emco</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="./" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="./manage.html" class="nav-link">Manage</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link nav-link-cta">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Open menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="card blog-article" aria-label="Blog post">
+            <div class="blog-article-top">
+                <a class="blog-back" href="./">← Back to blog</a>
+            </div>
+
+            <header class="blog-post-header">
+                <div id="postMeta" class="blog-post-meta"></div>
+                <h1 id="postTitle" class="blog-post-title">Loading…</h1>
+                <p id="postSummary" class="blog-post-summary"></p>
+
+                <div class="blog-engagement-bar" aria-label="Engagement">
+                    <div id="engagementCounts" class="blog-engagement-counts" aria-label="Engagement counts"></div>
+
+                    <div class="blog-engagement-actions" aria-label="Engagement actions">
+                        <button id="likeBtn" class="blog-btn" type="button">Like</button>
+                        <button id="bookmarkBtn" class="blog-btn" type="button">Bookmark</button>
+                        <button id="shareBtn" class="blog-btn" type="button">Share</button>
+                        <button id="copyLinkBtn" class="blog-btn" type="button">Copy link</button>
+                    </div>
+                </div>
+            </header>
+
+            <section id="postBody" class="blog-post-body"></section>
+
+            <hr class="blog-hr" />
+
+            <section class="blog-comments" aria-label="Comments">
+                <h2 class="blog-h2">Comments</h2>
+                <p class="blog-muted">Comments are stored locally in your browser (no backend yet). Keep it useful: questions, edge cases, and what you tried.</p>
+
+                <form id="commentForm" class="blog-comment-form">
+                    <div class="blog-form-row">
+                        <label class="blog-label" for="commentName">Name</label>
+                        <input id="commentName" class="blog-input" name="name" autocomplete="name" maxlength="60" placeholder="Your name" />
+                    </div>
+
+                    <div class="blog-form-row">
+                        <label class="blog-label" for="commentText">Comment</label>
+                        <textarea id="commentText" class="blog-textarea" name="text" maxlength="1200" placeholder="Write a thoughtful comment…"></textarea>
+                        <div class="blog-help" id="commentHelp">0/1200</div>
+                    </div>
+
+                    <div class="blog-form-actions">
+                        <button class="cta-button" type="submit">Post comment</button>
+                    </div>
+
+                    <div id="commentError" class="blog-error" role="alert" aria-live="polite"></div>
+                </form>
+
+                <div id="commentList" class="blog-comment-list" aria-label="Comment list"></div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Emco | Software Engineer | Full Stack Developer | Web • Mobile • Desktop • IoT</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Delivering production-ready solutions with clean code ☕💻✨</p>
+    </footer>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <script src="../script.js" defer></script>
+    <script src="./posts.js" defer></script>
+    <script src="./blog.js" defer></script>
+</body>
+</html>
