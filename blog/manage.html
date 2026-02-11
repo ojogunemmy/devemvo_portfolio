@@ -84,6 +84,58 @@
                     </div>
                 </div>
             </section>
+
+            <hr class="blog-hr" />
+
+            <section class="blog-admin-create" aria-label="Create a post">
+                <div class="blog-admin-panel-head">
+                    <h2 class="blog-h2">Create a post</h2>
+                    <div class="blog-muted">Draft a post as JSON blocks (per POST_SCHEMA.md), preview it, then save it locally in this browser.</div>
+                </div>
+
+                <div class="blog-admin-grid" aria-label="Create post grid">
+                    <div class="blog-admin-left">
+                        <label class="blog-label" for="postDraftArea">Post JSON</label>
+                        <textarea id="postDraftArea" class="blog-textarea" placeholder='{
+  "slug": "my-new-post",
+  "title": "My New Post",
+  "cover": { "src": "/public/blog-covers/example.svg", "alt": "Cover alt text" },
+  "category": { "id": "architecture", "name": "Architecture" },
+  "tags": ["tag1", "tag2"],
+  "author": { "name": "Dev Emco", "title": "Software Engineer" },
+  "publishedAt": "2026-02-11T09:00:00.000Z",
+  "seo": { "description": "Short meta description" },
+  "hero": { "kicker": "Architecture", "summary": "Short on-page summary" },
+  "stats": { "baseLikes": 0, "baseShares": 0 },
+  "content": [
+    { "type": "p", "text": "Hello world." }
+  ]
+}'></textarea>
+
+                        <div class="blog-admin-import-actions">
+                            <button id="previewDraftBtn" class="blog-btn" type="button">Preview</button>
+                            <button id="createPostBtn" class="blog-btn" type="button">Create post</button>
+                            <button id="updatePostBtn" class="blog-btn" type="button" disabled>Update post</button>
+                            <button id="cancelEditBtn" class="blog-btn" type="button" hidden>Cancel edit</button>
+                            <button id="clearDraftBtn" class="blog-btn blog-btn-danger" type="button">Clear</button>
+                        </div>
+
+                        <div id="postDraftError" class="blog-error" role="alert" aria-live="polite"></div>
+                        <div id="draftMode" class="blog-admin-summary" hidden aria-label="Draft mode"></div>
+                        <div class="blog-muted">Saved posts will show up on the Blog home and can be opened like: <span class="blog-badge">blog/post.html?slug=&lt;slug&gt;</span></div>
+                    </div>
+
+                    <div class="blog-admin-right">
+                        <div class="blog-admin-panel-head">
+                            <h2 class="blog-h2">Preview</h2>
+                            <div class="blog-muted">This is a visual preview of your draft.</div>
+                        </div>
+                        <div id="postDraftPreview" class="blog-admin-details" aria-label="Post preview">
+                            <p class="blog-muted">Click “Preview” to render your draft here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 
@@ -98,6 +150,7 @@
 
     <script src="../script.js" defer></script>
     <script src="./posts.js" defer></script>
+    <script src="./blog.js" defer></script>
     <script src="./manage.js" defer></script>
 </body>
 </html>
