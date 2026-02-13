@@ -59,6 +59,7 @@ function showContactMessage(event) {
     event.preventDefault();
 }
 
+/*
 // Add smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -74,6 +75,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+*/
 
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
