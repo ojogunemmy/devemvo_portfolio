@@ -4,8 +4,8 @@
 :root {
     --bg-primary: #f5f3ff;
     --bg-secondary: #faf8ff;
-    --text-primary: #1e1b4b;
-    --text-secondary: #4c4679;
+    --text-primary: #000000;
+    --text-secondary: #000000;
     --card-bg: rgba(255, 255, 255, 0.8);
     --card-shadow: rgba(102, 126, 234, 0.1);
     --border-color: rgba(102, 126, 234, 0.15);
@@ -18,8 +18,8 @@
 [data-theme="dark"] {
     --bg-primary: #0f0e1a;
     --bg-secondary: #1a1825;
-    --text-primary: #e0e7ff;
-    --text-secondary: #a5b4fc;
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
     --card-bg: rgba(26, 24, 37, 0.8);
     --card-shadow: rgba(0, 0, 0, 0.3);
     --border-color: rgba(102, 126, 234, 0.3);
