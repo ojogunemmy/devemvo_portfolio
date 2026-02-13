@@ -49,6 +49,7 @@ function updateDots(projectIndex) {
 
 // Auto-play sliders
 setInterval(() => {
+    if (document.visibilityState === "hidden") return;
     for (let i = 0; i < currentSlides.length; i++) {
         changeSlide(i, 1);
     }
@@ -115,6 +116,7 @@ if (hamburger) {
     });
 }
 
+/*
 // Add entrance animation to cards
 const cards = document.querySelectorAll('.card');
 const observerOptions = {
@@ -125,15 +127,8 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '0';
-            entry.target.style.transform = 'translateY(30px)';
-            entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, 100);
-            
+            entry.target.style.display = 'block';
+            entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
         }
     });
@@ -142,6 +137,7 @@ const observer = new IntersectionObserver(function(entries) {
 cards.forEach(card => {
     observer.observe(card);
 });
+*/
 
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('themeToggle');

@@ -137,7 +137,7 @@ h1 {
 
 .hero-home {
     text-align: left;
-    padding: clamp(70px, 14vw, 120px) 20px;
+    padding: clamp(70px, 14vw, 80px) 20px;
     background: var(--gradient-primary);
 }
 
@@ -148,7 +148,9 @@ h1 {
     left: -50%;
     width: 200%;
     height: 200%;
-    background-image: url('public/cubes.png');
+    background-image: url('public/blog-covers/category-first-blog-platform-without-cms.svg');
+    background-size:100% 100%;
+    background-position: center;
     opacity: 0.22;
     pointer-events: none;
 }
@@ -202,7 +204,7 @@ h1 {
     background: rgba(255, 255, 255, 0.12);
     color: #ffffff;
     font-weight: 900;
-    font-size: 0.95em;
+    font-size: 0.7em;
     width: fit-content;
 }
 
@@ -251,7 +253,7 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 22px;
+    padding: 8px 22px;
     border-radius: 999px;
     text-decoration: none;
     color: #ffffff;
@@ -750,7 +752,7 @@ h2 {
 
 .cta-button {
     display: inline-block;
-    padding: clamp(14px, 3vw, 18px) clamp(30px, 6vw, 45px);
+    padding: 8px 22px;
     background: var(--gradient-primary);
     color: white;
     text-decoration: none;
@@ -758,7 +760,6 @@ h2 {
     font-size: clamp(1em, 2.5vw, 1.2em);
     font-weight: 700;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 20px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
