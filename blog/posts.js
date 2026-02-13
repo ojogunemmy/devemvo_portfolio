@@ -30,7 +30,7 @@
             slug: "category-first-blog-platform-without-cms",
             title: "Build a Category-First Blog Platform (Without a CMS): A Production-Minded Blueprint",
             cover: {
-                src: "/public/blog-covers/category-first-blog-platform-without-cms.svg",
+                src: "../public/blog-covers/category-first-blog-platform-without-cms.svg",
                 alt: "Category-first blog blueprint cover"
             },
             category: {
@@ -73,7 +73,7 @@
                 },
                 {
                     type: "image",
-                    src: "/public/blog-images/category-taxonomy-map.svg",
+                    src: "../public/blog-images/category-taxonomy-map.svg",
                     alt: "A small, stable category taxonomy branching into clear content areas.",
                     caption: "A category-first blog starts with a small, stable taxonomy that readers can actually navigate.",
                     source: { label: "Dev Emco (SVG)" }
@@ -128,7 +128,7 @@
                 },
                 {
                     type: "image",
-                    src: "/public/blog-images/content-model-blocks.svg",
+                    src: "../public/blog-images/content-model-blocks.svg",
                     alt: "A card showing typed content blocks like paragraphs, headings, lists, code, and images.",
                     caption: "Typed blocks make it easy to render consistent HTML and extend your content safely over time.",
                     source: { label: "Dev Emco (SVG)" }
@@ -202,7 +202,7 @@
             slug: "real-time-iot-data-pipelines-edge-cases",
             title: "Real-Time IoT Data Pipelines: Edge Cases That Break ‘It Works on My Desk’",
             cover: {
-                src: "/public/blog-covers/real-time-iot-data-pipelines-edge-cases.svg",
+                src: "../public/blog-covers/real-time-iot-data-pipelines-edge-cases.svg",
                 alt: "Real-time IoT edge cases cover"
             },
             category: {
@@ -246,7 +246,7 @@
 
                 {
                     type: "image",
-                    src: "/public/blog-images/iot-pipeline-diagram.svg",
+                    src: "../public/blog-images/iot-pipeline-diagram.svg",
                     alt: "A simple IoT pipeline diagram showing Devices → Ingest → Stream → Serve, with reliability edge cases.",
                     caption: "A minimal real-time pipeline — and the edge cases you must design for from day one.",
                     source: { label: "Dev Emco (SVG)" }
